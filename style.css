@@ -8,7 +8,7 @@ body {
   font-family: 'Inria Serif', serif;
 }
 
-/* Header */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -29,7 +29,7 @@ header button {
   cursor: pointer;
 }
 
-/* Sale Banner */
+
 .sale-banner {
   background: #d32f2f;
   color: white;
@@ -38,7 +38,7 @@ header button {
   font-size: 14px;
 }
 
-/* Hero */
+
 .hero {
   position: relative;
 }
@@ -89,7 +89,7 @@ h2 {
   font-size: 13px;
 }
 
-/* Footer */
+
 footer {
   background: black;
   color: white;
@@ -98,7 +98,7 @@ footer {
   font-size: 13px;
 }
 
-/* Desktop */
+
 @media (min-width: 768px) {
   .products {
     grid-template-columns: repeat(4, 1fr);
