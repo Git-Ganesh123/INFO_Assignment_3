@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inria Serif', serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 2px solid black;
+}
+
+header h1 {
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+header button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sale Banner */
+.sale-banner {
+  background: #d32f2f;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  background: black;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* Products */
+h2 {
+  text-align: center;
+  padding: 24px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 0 16px 32px;
+}
+
+.card {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.card p {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+/* Footer */
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 24px;
+  font-size: 13px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 48px 48px;
+  }
+}
