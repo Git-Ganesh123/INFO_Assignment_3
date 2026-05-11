@@ -1,7 +1,18 @@
-document.getElementById('menuBtn').addEventListener('click', function() {
-    document.getElementById('fullMenu').classList.add('active');
-  });
-  
-  document.getElementById('closeBtn').addEventListener('click', function() {
-    document.getElementById('fullMenu').classList.remove('active');
-  });
+const menuBtn = document.getElementById('menuBtn');
+const closeBtn = document.getElementById('closeBtn');
+const fullMenu = document.getElementById('fullMenu');
+
+menuBtn.addEventListener('click', () => {
+  fullMenu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  fullMenu.classList.remove('active');
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && fullMenu.classList.contains('active')) {
+    fullMenu.classList.remove('active');
+  }
+});
+
