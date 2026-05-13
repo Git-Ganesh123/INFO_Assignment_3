@@ -11,12 +11,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px;
   border-bottom: 1px solid #ddd;
   background: #fff;
   position: sticky;
@@ -56,9 +55,116 @@ header h1 {
 }
 
 
+.full-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.97);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-menu.active {
+  display: flex;
+}
+
+.menu-inner {
+  background: #fff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  padding: 40px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.menu-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1.5px solid #333;
+  border-radius: 30px;
+  padding: 12px 20px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-family: 'Inria Serif', serif;
+  font-size: 14px;
+  width: 100%;
+  background: transparent;
+}
+
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.menu-cat-item {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+.menu-cat-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu-cat-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-cat-label {
+  font-family: 'Inria Serif', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.7);
+}
+
+.menu-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ══════════════════════════════════
+   HERO IMAGE (with whitespace border)
+   ══════════════════════════════════ */
 .hero {
   width: 100%;
   line-height: 0;
+  padding: 16px 16px 0;
 }
 
 .hero img {
@@ -67,7 +173,9 @@ header h1 {
   display: block;
 }
 
-
+/* ══════════════════════════════════
+   SALE BANNER
+   ══════════════════════════════════ */
 .sale-banner {
   background: #d32f2f;
   color: #fff;
@@ -95,11 +203,13 @@ header h1 {
   align-items: center;
   justify-content: center;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   cursor: pointer;
 }
 
-
+/* ══════════════════════════════════
+   SECTION HEADING
+   ══════════════════════════════════ */
 .section-heading {
   text-align: center;
   padding: 30px 16px 24px;
@@ -110,7 +220,9 @@ header h1 {
   font-family: 'Inria Serif', serif;
 }
 
-
+/* ══════════════════════════════════
+   CATEGORY CARDS (homepage)
+   ══════════════════════════════════ */
 .categories {
   display: flex;
   justify-content: center;
@@ -146,10 +258,14 @@ header h1 {
   letter-spacing: 0.5px;
 }
 
+/* ══════════════════════════════════
+   AUTUMN 26 FEATURE (with whitespace border)
+   ══════════════════════════════════ */
 .autumn-feature {
   position: relative;
   width: 100%;
   line-height: 0;
+  padding: 16px;
 }
 
 .autumn-feature img {
@@ -160,10 +276,10 @@ header h1 {
 
 .autumn-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  top: 16px;
   display: flex;
   align-items: flex-end;
   padding: 32px 24px;
@@ -181,13 +297,14 @@ header h1 {
   font-weight: 400;
   color: #fff;
   letter-spacing: 1px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
   line-height: 1;
 }
 
 .autumn-text em {
   font-style: italic;
 }
+
 
 .description {
   text-align: center;
@@ -221,7 +338,6 @@ header h1 {
   max-width: 400px;
   margin: 0 auto;
 }
-
 
 .services {
   display: flex;
@@ -316,50 +432,107 @@ footer {
   color: #000;
 }
 
-/* ══════════════════════════════════
-   FULL-SCREEN NAV MENU
-   ══════════════════════════════════ */
-.full-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
+
+.page-title {
+  text-align: center;
+  padding: 24px 16px 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: 'Inria Serif', serif;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 10px;
+  padding: 0 14px 20px;
+}
+
+.product-card {
+  text-align: center;
+}
+
+.product-img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #f5f0ea;
+}
+
+.product-img-wrap img {
   width: 100%;
   height: 100%;
-  background: #fff;
-  z-index: 200;
-  display: none;
-  flex-direction: column;
-  padding: 24px;
+  object-fit: cover;
+  display: block;
 }
 
-.full-menu.active {
-  display: flex;
-}
-
-.full-menu #closeBtn {
-  align-self: flex-end;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.full-menu ul {
-  list-style: none;
-  margin-top: 48px;
-}
-
-.full-menu li {
-  margin-bottom: 32px;
-}
-
-.full-menu a {
+.product-name {
   font-family: 'Inria Serif', serif;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 7px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  text-decoration: none;
+  margin-top: 6px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.product-price {
+  font-family: 'Inria Serif', serif;
+  font-size: 8px;
+  color: #555;
+  margin-top: 3px;
+}
+
+
+.feature-image {
+  width: 100%;
+  line-height: 0;
+}
+
+.feature-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.product-description {
+  padding: 32px 24px;
+  text-align: center;
+  font-family: 'Inria Serif', serif;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.product-description p {
+  margin-bottom: 10px;
+}
+
+.product-description strong {
+  color: #000;
+}
+
+.product-description .desc-subhead {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.product-description ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-description ul li {
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+.product-description ul li::before {
+  content: "• ";
   color: #000;
 }
 
@@ -412,5 +585,22 @@ footer {
 
   .footer-col ul li a {
     font-size: 10px;
+  }
+
+  .product-name {
+    font-size: 9px;
+  }
+
+  .product-price {
+    font-size: 9px;
+  }
+
+  .menu-cat-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .menu-cat-label {
+    font-size: 16px;
   }
 }
